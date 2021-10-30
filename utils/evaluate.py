@@ -34,7 +34,7 @@ def hyperparameter_tuning(model, parameters, X_train, y_train):
                         scoring='roc_auc', refit=True, verbose=1)
 
     grid.fit(X_train, y_train)
-    print("Best Score: {:.2f}%".format(grid.best_score_*100))
+    print("Best Score (AUC ROC): {}".format(grid.best_score_*100))
     print("Best Parameters:", grid.best_params_)
     best_model = grid.best_estimator_
     return best_model
